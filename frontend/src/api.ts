@@ -43,6 +43,13 @@ export function createProject(data: { name: string; description?: string }): Pro
   return request<Project>("/projects", { method: "POST", body: JSON.stringify(data) });
 }
 
+export function updateProject(
+  id: string,
+  data: { name?: string; description?: string }
+): Promise<Project> {
+  return request<Project>(`/projects/${id}`, { method: "PATCH", body: JSON.stringify(data) });
+}
+
 export function deleteProject(id: string): Promise<void> {
   return request<void>(`/projects/${id}`, { method: "DELETE" });
 }

@@ -26,6 +26,26 @@ body {
   font-size: 1.4rem;
 }
 
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-button {
+  background: transparent;
+  border: 1px solid #444a5a;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.back-button:hover {
+  background: #2c3242;
+}
+
 .app-main {
   flex: 1;
   display: grid;
@@ -39,6 +59,51 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.app-main > .projects-window {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-card-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.project-card-desc {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0.75rem;
+  min-height: 1.2em;
 }
 
 .panel {
