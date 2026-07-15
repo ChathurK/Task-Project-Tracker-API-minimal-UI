@@ -28,6 +28,15 @@ export async function getProject(req: Request, res: Response, next: NextFunction
   }
 }
 
+export async function updateProject(req: Request, res: Response, next: NextFunction) {
+  try {
+    const project = await projectService.updateProject(req.params.id as string, req.body);
+    res.status(200).json(project);
+  } catch (err) {
+    next(err);
+  }
+}
+
 export async function deleteProject(req: Request, res: Response, next: NextFunction) {
   try {
     await projectService.deleteProject(req.params.id as string);

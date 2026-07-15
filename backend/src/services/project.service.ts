@@ -34,6 +34,26 @@ export async function getProjectWithTasks(id: string) {
   return { ...project, tasks };
 }
 
+export async function updateProject(
+  id: string,
+  data: { name?: string; description?: string }
+) {
+  if (!Types.ObjectId.isValid(id)) {
+    throw new AppError("Invalid project id", 400, "INVALID_ID");
+  }
+
+  const project = await Project.findById(id);
+  if (!project) {
+    throw new AppError("Project not found", 404, "PROJECT_NOT_FOUND");
+  }
+
+  if (data.name !== undefined) project.name = data.name;
+  if (data.description !== undefined) project.description = data.description;
+
+  await project.save();
+  return project;
+}
+
 export async function deleteProject(id: string) {
   if (!Types.ObjectId.isValid(id)) {
     throw new AppError("Invalid project id", 400, "INVALID_ID");
