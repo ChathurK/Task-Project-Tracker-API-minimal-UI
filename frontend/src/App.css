@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f5f6f8;
+  color: #1f2430;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: #1f2430;
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  align-items: start;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.stacked-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stacked-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.stacked-form input,
+.stacked-form textarea,
+.stacked-form select {
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #d5d8de;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.stacked-form button {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: #3457d5;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.stacked-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.stacked-form button.secondary {
+  background: #d5d8de;
+  color: #1f2430;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.error-text {
+  color: #c0392b;
+  font-size: 0.85rem;
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.project-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.project-list li:hover {
+  background: #f0f1f5;
+}
+
+.project-list li.active {
+  background: #e5eaff;
+  font-weight: 600;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #c0392b;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters select {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #d5d8de;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task-item {
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #ccc;
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.task-item.priority-high {
+  border-left-color: #c0392b;
+}
+
+.task-item.priority-med {
+  border-left-color: #e0a800;
+}
+
+.task-item.priority-low {
+  border-left-color: #2e8b57;
+}
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.task-desc {
+  margin: 0.35rem 0;
+  color: #555;
+  font-size: 0.88rem;
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #eee;
+  text-transform: capitalize;
+}
+
+.status-todo {
+  background: #e0e0e0;
+}
+
+.status-in-progress {
+  background: #cfe3ff;
+}
+
+.status-done {
+  background: #d4f4dd;
+}
+
+.priority-badge-high {
+  background: #fbdad4;
+}
+
+.priority-badge-med {
+  background: #fbeecb;
+}
+
+.priority-badge-low {
+  background: #d9f2e3;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-actions button {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #d5d8de;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.task-actions button.danger {
+  color: #c0392b;
+  border-color: #f0c4bc;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.pagination button {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #d5d8de;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-width: 760px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+}
